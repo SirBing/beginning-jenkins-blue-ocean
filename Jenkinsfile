@@ -4,8 +4,8 @@ pipeline {
     stage('Build & Test') {
       agent {
         docker {
-          image 'maven:latest'
           args 'sh \'mvn -Dmaven.test.failure.ignore clean package\' stash(name:'
+          image '"maven:latest"'
         }
 
       }
@@ -18,7 +18,7 @@ pipeline {
     stage('Report & Publish') {
       agent {
         docker {
-          image 'report-publish-build'
+          image '"report-publish-build"'
         }
 
       }

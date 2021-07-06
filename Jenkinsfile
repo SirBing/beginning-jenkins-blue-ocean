@@ -5,7 +5,7 @@ pipeline {
       agent {
         docker {
           args 'sh \'mvn -Dmaven.test.failure.ignore clean package\' stash(name:'
-          image '"maven:latest"'
+          image '\'maven:3.3.3-jdk-8\''
         }
 
       }

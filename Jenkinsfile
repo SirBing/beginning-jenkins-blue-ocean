@@ -5,7 +5,7 @@ pipeline {
       agent {
         docker {
           args 'sh \'mvn -Dmaven.test.failure.ignore clean package\' stash(name:'
-          image '\'maven:3.3.3-jdk-8\''
+          image 'jenkinsci/blueocean'
         }
 
       }
@@ -18,7 +18,7 @@ pipeline {
     stage('Report & Publish') {
       agent {
         docker {
-          image '"report-publish-build"'
+          image 'jenkinsci/blueocean'
         }
 
       }

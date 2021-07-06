@@ -5,7 +5,7 @@ pipeline {
       agent {
         docker {
           args 'sh \'mvn -Dmaven.test.failure.ignore clean package\' stash(name:'
-          image 'jenkinsci/blueocean'
+          image 'nikhilpathania/jenkins_ssh_agent'
         }
 
       }
@@ -18,7 +18,7 @@ pipeline {
     stage('Report & Publish') {
       agent {
         docker {
-          image 'jenkinsci/blueocean'
+          image 'nikhilpathania/jenkins_ssh_agent'
         }
 
       }
